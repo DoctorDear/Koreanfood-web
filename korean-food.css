@@ -1,0 +1,378 @@
+:root {
+    --red: #690101;
+    --black: #222;
+    --white: #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+    font-family: 'tahoma'; 
+}
+
+/*----- Nav Section -----*/
+
+nav {
+    background-color: var(--red);
+    height: 90px;
+    color: var(--white);
+}
+
+.nav-con {
+    display: flex;
+    justify-content: space-between;
+    height: 90px;
+    align-items: center;
+}
+
+.nav-logo {
+    display: flex;
+    margin: 2rem;
+}
+
+.nav-logo1 img {
+    max-width: 50px;
+    height: auto;
+    margin-right: 1rem;
+}
+
+.nav-logo2 img {
+    max-width: 200px;
+    height: auto;
+    flex-shrink: 0;
+}
+
+ul.menu {
+    display: flex;
+    list-style: none;
+}
+
+ul.menu li {
+    margin: 0 1rem;
+
+}
+
+ul.menu li a {
+    color: var(--white);
+    text-decoration: none;
+
+}
+
+/*----- Nav Section -----*/
+
+
+/*----- Banner Section -----*/
+.banner {
+    background-color: red;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(https://firebasestorage.googleapis.com/v0/b/fir-web-html.appspot.com/o/tofu-yolk-boiled-spicy-soup.jpg?alt=media&token=f63f964f-d05c-493e-b34c-c6078a01f9f4);
+    background-position: center;
+    background-size: cover;
+    text-align: left;
+    box-shadow: inset 0 0 0 2000px rgba(0,0,0,0.3);
+}
+
+
+.banner-info img {
+    max-width: 400px;
+    margin-bottom: 2rem;
+}
+
+.banner-info p {
+    color: var(--white);
+    font-family: "tahoma";
+}
+
+.banner-info .banner-btn {
+    margin-top: 1rem;
+    display: inline-block;
+    background-color: var(--red);
+    color: #fff;
+    text-decoration: none;
+    padding: 1rem 1.5rem;
+    font-family: "tahoma";
+}
+/*----- Banner Section -----*/
+
+/*----- Blog Section -----*/
+.blog {
+    background: var(--white);
+    height: auto;
+    padding: 2rem;   
+    counter-reset: post-counter; /* เริ่มต้นค่า counter ที่ 0 */
+}
+
+.blog-title h1 {
+    color: var(--black);
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.blog-title p {
+    color: var(--black);
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.blog-posts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem;
+    position: relative;
+}
+
+.blog-post {
+    position: relative;
+    counter-increment: post-counter; /* เพิ่มค่าของ counter ทีละ 1 */
+    margin-bottom: 20px; /* เพิ่มช่องว่างระหว่างกล่อง */
+}
+
+.blog-post::before {
+    content: counter(post-counter); /* ใช้ค่าของ counter เป็นเลขแต่ละโพสต์ */
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--red);
+    color: var(--white);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.blog-post img {
+    width: 100%;
+    border-bottom: 15px solid var(--red);
+}
+
+.blog-post p {
+    color: var(--black);
+    line-height: 20px;
+    margin-top: 0.5rem;
+}
+
+.blog-post-btn {
+    background-color: var(--red);
+    color: var(--white);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    display: inline-block;
+    margin-top: 2rem;
+}
+
+/*----- Blog Section -----*/
+
+
+/*----- CTA Section -----*/
+
+.cta {
+    height: 555px;
+    background: url(https://images.unsplash.com/photo-1566705474094-5bf047ce2754?q=80&w=2812&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    background-position: center;
+    background-size: cover;
+    box-shadow: inset 0 0 0 2000px rgba(0,0,0,0.4);
+}
+
+.cta-con {
+    display: flex;
+    align-items: center;
+    height: 555px;
+    justify-content: space-between;
+    
+
+}
+.cta-title {
+    flex: 1;
+    color: var(--white);
+    font-size: 1.5rem;
+    margin-left: 2rem;
+    text-shadow: #222;
+
+}
+
+.cta-clip {
+    margin: 0 2rem;
+}
+
+@media (max-width: 768px) {
+    .cta-con {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .cta-title {
+        margin-top: 2rem;
+        padding: 1rem ;
+    }
+
+    .cta-clip {
+        margin: 0;
+        padding: 1rem 2rem;
+    }
+
+    .cta-clip iframe {
+        max-width: 100%;
+    }
+}
+/*----- CTA Section -----*/
+
+
+/*----- Pricing Section -----*/
+
+.pricing {
+    height: auto;
+    padding: 5rem 0;
+}
+
+.pricing-title {
+    text-align: center;
+}
+
+.pricing-title h1 {
+    color: var(--red);
+    font-size: 3rem;
+}
+
+.pricing-title p {
+    color: var(--black);
+    font-size: 1rem;
+    text-align: center;
+
+}
+
+.pricing-box {
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem;
+}
+
+
+.pricing-info {
+    flex: 1;
+    background-color: var(--red);
+    height: 420px;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 0 2rem;
+}
+
+.pricing-info h1 {
+    color: var(--white);
+    margin-top: 2rem;
+}
+
+.pricing-info h2 {
+    color: var(--white);
+    font-size: 1.5rem;
+    margin: 1rem 0;
+}
+.pricing-info p {
+    color: var(--white);
+}
+.pricing-btn {
+    background-color: var(--white);
+    padding: 1rem 1.5rem;
+    display: inline-block;
+    margin-top: 2rem;
+    color: var(--red);
+    text-decoration: none;
+}
+/*----- Pricing Section -----*/
+
+/*------ Search Section ------*/
+
+.search {
+	height: 400px;
+	background: red;
+	background: url("https://images.unsplash.com/photo-1616647169746-1e62e471cae6?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+	background-position: center;
+	background-size: cover;
+	box-shadow: inset 0 0 0 2000px rgba(0,0,0,0.5);
+}
+
+.search-con {
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 400px;
+}
+
+.search-title h3 {
+	color: var(--white);
+	font-size: 3rem;
+}
+
+.search-title p {
+	
+	color: var(--white);
+	font-size: 1.2rem;
+	margin-bottom: 3rem;	
+}
+
+.search-input {
+	margin-top: 3rem;
+	display: flex;
+	justify-content: center;
+}
+
+.search-text {
+	padding: 0.5 rem 2rem;
+	padding: 0.5rem;
+	width: 500px;
+	height: 50px;
+	border: none;
+	outline: none;	
+}
+
+.search-submit {
+	width: 50px;
+	height: 50px;
+	border: none;
+	outline: none;
+	cursor: pointer;
+}
+
+/*------ Search Section ------*/
+
+/*----- Footer Section -----*/
+footer {
+    background-color: var(--red);
+    height: 300px;
+    color: var(--white);
+
+}
+.footer-con {
+    display: grid;
+    grid-template-columns: repeat(3 ,1fr);
+    color: var(--white);
+    
+}
+.footer-item  {
+    margin: 3rem 2rem;
+}
+.footer-con ul {
+    list-style: none;
+
+}
+.footer-item ul li {
+    margin: 1rem 0;
+    
+}
+
+.footer-item a {
+    color: var(--white);
+    text-decoration: none;
+}
+
+/*----- Footer Section -----*/
